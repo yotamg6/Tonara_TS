@@ -1,0 +1,346 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.container {
+  position: relative;
+  transform: scale(0.994695, 0.87763);
+}
+.coursePage {
+  position: absolute;
+  width: 375px;
+  height: 760px;
+  left: 0;
+  top: 0;
+  overflow-y: scroll;
+  background: #f3f6fa;
+}
+
+.addBtn {
+  position: absolute;
+  width: 44px;
+  height: 48px;
+  left: 321px;
+  top: 92px;
+  background: #ffffff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+  border: 1px solid #ffffff;
+  border-radius: 80px;
+  cursor: pointer;
+}
+
+.union {
+  width: 32px;
+  height: 32px;
+  left: 8px;
+  top: 8px;
+}
+
+.line1 {
+  width: 0px;
+  height: 28px;
+  position: absolute;
+  left: 45.83%;
+  right: -12.5%;
+  top: 16%;
+  border: 2px solid #000000;
+  border-radius: 4px;
+}
+
+.line2 {
+  width: 28px;
+  height: 0;
+  position: absolute;
+  left: 12%;
+  top: 45.5%;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  transform: rotate(180deg);
+}
+
+.teacherImage {
+  position: absolute;
+  border: 2px hidden #ffffff;
+  background: url('./media/Teacher\ Image.png') no-repeat;
+  box-sizing: border-box;
+  width: 80px;
+  height: 88px;
+  left: 20px;
+  top: 60px;
+  border-radius: 70px;
+  background-size: 80px 90px;
+}
+
+.topCover {
+  width: 375px;
+  height: 100px;
+  left: 0;
+  top: 0;
+  background: url('./media/Frame\ 145319.png');
+}
+
+.menuBtn {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  left: 318px;
+  top: 10px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.32));
+}
+
+.menuVector {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 29px;
+  width: 28px;
+  left: 10px;
+  top: 12px;
+  border-radius: 2px;
+  position: absolute;
+  left: 20.83%;
+  right: 20.83%;
+  top: 25%;
+  bottom: 25%;
+  background: transparent;
+  border-radius: 2px;
+}
+
+.menuVectorLines {
+  width: 29px;
+  height: 5px;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  background: white;
+}
+.searchBar {
+  position: absolute;
+  box-sizing: border-box;
+  width: 335px;
+  height: 40px;
+  left: 22px;
+  top: 178px;
+  overflow-x: scroll;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 46px;
+}
+
+.iconSearch {
+  width: 24px;
+  height: 24px;
+  left: 11px;
+  top: 8px;
+}
+
+.group145115 {
+  width: 20px;
+  height: 20px;
+  left: 2px;
+  top: 0px;
+}
+
+.firstSubGroups145115 {
+  left: 45.47%;
+  right: 8.33%;
+  top: 45.47%;
+  bottom: 8.33%;
+}
+
+.secSubGroups145115 {
+  left: 16.33%;
+  right: 18.27%;
+  top: 10.33%;
+}
+
+.circleVector {
+  height: 13.61515235900879px;
+  width: 13.61515235900879px;
+  left: 2px;
+  border-radius: 10px;
+  border: 2px solid #333333;
+}
+.searchStickVector {
+  height: 2.287285804748535px;
+  width: 8.5px;
+  left: 0px;
+  top: 3px;
+  border-radius: 0px;
+  transform: rotate(230deg);
+}
+
+.positionAbso {
+  position: absolute;
+}
+
+.gray1 {
+  background: #333333;
+}
+.searchText {
+  position: absolute;
+  width: 50px;
+  height: 20px;
+  left: 39px;
+  top: 10px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  text-align: center;
+  color: #333333;
+}
+
+.list {
+  position: absolute;
+  width: 335px;
+  height: 491px;
+  left: 20px;
+  right: 22px;
+  top: 228px;
+}
+
+.card {
+  width: 335px;
+  height: 153px;
+  left: 20px;
+  top: 566px;
+  margin: 16px 1.375px 16px 1.25px;
+  background: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.topCardContainer {
+  position: relative;
+}
+.titlesGroup145234 {
+  position: absolute;
+  width: 247px;
+  height: 69.656px;
+  left: 72px;
+  top: 13px;
+}
+
+.title1 {
+  width: 247px;
+  font-family: 'Poppins';
+  font-style: normal;
+  text-align: start;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 27px;
+  text-transform: capitalize;
+  color: #333333;
+}
+
+.subTitle1 {
+  width: 247px;
+  left: 72px;
+  top: 43px;
+  font-family: 'Poppins';
+  font-style: normal;
+  text-align: start;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: #828282;
+}
+
+.rythemIcon {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  left: 16px;
+  top: 15px;
+}
+
+.instructionGroup145345 {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: 303px;
+  height: 24px;
+  left: 16px;
+  top: 81px;
+}
+.textInstructions {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: #333333;
+}
+/* ////////////////////// */
+.progressGroup145346 {
+  position: absolute;
+  width: 303px;
+  height: 20px;
+  left: 16px;
+  top: 117px;
+}
+
+.innerProgGroup145242 {
+  width: 254px;
+  height: 6px;
+  margin-top: 8px;
+  background: #d7f9e6;
+}
+
+.progRectangle26 {
+  height: 6px;
+  background: #39e380;
+}
+
+.progPercentage {
+  position: absolute;
+  width: 29px;
+  height: 20px;
+  left: 290px;
+  top: 117px;
+
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  text-align: right;
+
+  color: #333333;
+}
