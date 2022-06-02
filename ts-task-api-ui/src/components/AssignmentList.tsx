@@ -1,24 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Item from './Item';
+import { AssignmentInter } from '../interfaces';
 
-interface Response {
-  title: string;
-  description: string;
-  music_genre: string;
-  practice_time: string;
-  days: string;
-  days_practiced: string;
-}
+// interface Response {
+//   title: string;
+//   description: string;
+//   music_genre: string;
+//   practice_time: string;
+//   days: number;
+//   days_practiced: number;
+// }
 
 const AssignmentList: React.FC = () => {
-  const [returnedData, setReturnedData] = useState<Response[]>([]);
+  const [returnedData, setReturnedData] = useState<AssignmentInter[]>([]);
 
   useEffect(() => {
     function getAllAssignments(): void {
       try {
         axios
-          .get<Response[]>('http://localhost:5000/all-assignments')
+          .get<AssignmentInter[]>('http://localhost:5000/all-assignments')
           .then((response) => {
             console.log(response.data);
             setReturnedData(response.data);
@@ -32,7 +33,7 @@ const AssignmentList: React.FC = () => {
   return (
     <div className="list">
       {returnedData.length
-        ? returnedData.map((assignment: Response, i: number) => {
+        ? returnedData.map((assignment, i): JSX.Element => {
             return <Item key={i} assignment={assignment} />;
           })
         : null}

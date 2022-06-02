@@ -10,8 +10,13 @@ const Database_1 = require("./config/Database");
 const index_1 = __importDefault(require("./routes/index"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
-Database_1.db.authenticate();
-console.log('Database Connected');
+try {
+    Database_1.db.authenticate();
+    console.log('Database Connected');
+}
+catch (e) {
+    console.log(e);
+}
 app.use((0, cors_1.default)({ credentials: true, origin: 'http://localhost:3000' }));
 app.use(express_1.default.json());
 app.use(index_1.default);

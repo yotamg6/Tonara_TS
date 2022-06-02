@@ -9,8 +9,12 @@ import router from './routes/index';
 dotenv.config();
 const app = express();
 
-db.authenticate();
-console.log('Database Connected');
+try {
+  db.authenticate();
+  console.log('Database Connected');
+} catch (e) {
+  console.log(e);
+}
 
 app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
 app.use(express.json());

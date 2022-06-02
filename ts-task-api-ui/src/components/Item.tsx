@@ -1,30 +1,37 @@
 import rythemLogo from '../media/rythem.png';
 
 import groupAssignmentIcon from '../media/groupAssignment.png';
-
-interface AssignmentProp {
-  title: string;
-  description: string;
-  music_genre: string;
-  practice_time: string;
-  days: number;
-  days_practiced: number;
-}
+import { AssignmentInter } from '../interfaces';
 
 // interface AssignmentProp {
-//   assignment: TResponse;
+//   assignment: {
+//     title: string;
+//     description: string;
+//     music_genre: string;
+//     practice_time: string;
+//     days: number;
+//     days_practiced: number;
+//   };
 // }
 
+interface AssignmentProp {
+  assignment: AssignmentInter;
+}
+
 const Item: React.FC<AssignmentProp> = ({
-  title,
-  description,
-  music_genre,
-  practice_time,
-  days,
-  days_practiced,
+  assignment: {
+    title,
+    description,
+    music_genre,
+    practice_time,
+    days,
+    days_practiced,
+  },
 }) => {
-  const progress = (days_practiced / days) * 254;
-  const progressPercentage = Math.round((days_practiced / days) * 100);
+  const progress =
+    days_practiced && days ? (days_practiced / days) * 254 : null;
+  const progressPercentage =
+    days_practiced && days ? Math.round((days_practiced / days) * 100) : null;
 
   return (
     <>

@@ -8,13 +8,12 @@ router.post('/assignment', async (req: Request, res: Response) => {
     const ret: Assignments = await Assignments.create({
       title: req.body.title,
       description: req.body.description,
-      music_genre: req.body.musicGenre,
-      practice_time: req.body.practiceTime,
+      music_genre: req.body.music_genre,
+      practice_time: req.body.practice_time,
       days: req.body.days,
-      days_practiced: req.body.daysPracticed,
+      days_practiced: req.body.days_practiced,
     });
-    // return res.json({ filedata: ret.dataValues });
-    return res.json({ filedata: ret });
+    return res.json(ret);
   } catch (e) {
     console.log('from uploads', e);
   }

@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.db = void 0;
 const sequelize_typescript_1 = require("sequelize-typescript");
 const dotenv_1 = __importDefault(require("dotenv"));
+const AssignmentModel_1 = require("../models/AssignmentModel");
 dotenv_1.default.config();
 const dbName = process.env.DB_NAME;
 const dbUser = process.env.DB_USER;
@@ -14,4 +15,5 @@ exports.db = new sequelize_typescript_1.Sequelize(dbName, dbUser, dbPassword, {
     host: 'localhost',
     dialect: 'postgres',
     logging: true,
+    models: [AssignmentModel_1.Assignments],
 });
