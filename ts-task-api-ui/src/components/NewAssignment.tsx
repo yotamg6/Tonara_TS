@@ -6,18 +6,8 @@ import UploadData from './UploadData';
 const NewAssignment = () => {
   let navigate = useNavigate();
 
-  //   interface Assignment {
-  //     title?: string;
-  //     description?: string;
-  //     musicGenre?: string;
-  //     practiceTime?: string | number;
-  //     days?: number | string;
-  //     daysPracticed?: number | string;
-  //   }
-
   interface MyFormType extends Partial<AssignmentInter> {}
 
-  //   const [inputs, setInputs] = useState<Assignment | {}>({});
   const [inputs, setInputs] = useState<MyFormType>({});
 
   const handleChange = (

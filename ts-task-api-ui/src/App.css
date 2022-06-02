@@ -290,6 +290,12 @@
   top: 15px;
 }
 
+.pdfLink {
+  position: absolute;
+  right: 15px;
+  top: 40px;
+}
+
 .instructionGroup145345 {
   position: absolute;
   display: flex;
@@ -307,7 +313,6 @@
   line-height: 140%;
   color: #333333;
 }
-/* ////////////////////// */
 .progressGroup145346 {
   position: absolute;
   width: 303px;

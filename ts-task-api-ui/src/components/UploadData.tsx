@@ -20,15 +20,6 @@ const UploadData: React.FC<FormProps> = ({
 }) => {
   const [uploadedData, setUploadedData] = useState<AssignmentInter>();
   const handleSubmit = async () => {
-    // if (formValues) {
-    //   const {
-    //     title,
-    //     description,
-    //     musicGenre,
-    //     practiceTime,
-    //     days,
-    //     daysPracticed,
-    //   } = formValues;
     try {
       axios
         .post<AssignmentInter>('http://localhost:5000/assignment', {
@@ -40,7 +31,6 @@ const UploadData: React.FC<FormProps> = ({
           days_practiced,
         })
         .then((response) => {
-          console.log(response.data);
           setUploadedData(response.data);
         });
     } catch (e) {

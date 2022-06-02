@@ -1,18 +1,7 @@
 import rythemLogo from '../media/rythem.png';
-
 import groupAssignmentIcon from '../media/groupAssignment.png';
 import { AssignmentInter } from '../interfaces';
-
-// interface AssignmentProp {
-//   assignment: {
-//     title: string;
-//     description: string;
-//     music_genre: string;
-//     practice_time: string;
-//     days: number;
-//     days_practiced: number;
-//   };
-// }
+import Pdf from '../docs/doc.pdf';
 
 interface AssignmentProp {
   assignment: AssignmentInter;
@@ -42,7 +31,9 @@ const Item: React.FC<AssignmentProp> = ({
             <div className="title1">{title}</div>
             <div className="subTitle1">{music_genre}</div>
           </div>
-
+          <a href={Pdf} target="_blank" className="pdfLink">
+            PDF URL
+          </a>
           <div className="instructionGroup145345">
             <div className="textInstructions">
               {days} days / {practice_time} minutes per day

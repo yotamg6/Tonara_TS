@@ -3,15 +3,6 @@ import axios from 'axios';
 import Item from './Item';
 import { AssignmentInter } from '../interfaces';
 
-// interface Response {
-//   title: string;
-//   description: string;
-//   music_genre: string;
-//   practice_time: string;
-//   days: number;
-//   days_practiced: number;
-// }
-
 const AssignmentList: React.FC = () => {
   const [returnedData, setReturnedData] = useState<AssignmentInter[]>([]);
 
@@ -21,7 +12,6 @@ const AssignmentList: React.FC = () => {
         axios
           .get<AssignmentInter[]>('http://localhost:5000/all-assignments')
           .then((response) => {
-            console.log(response.data);
             setReturnedData(response.data);
           });
       } catch (e) {
