@@ -15,7 +15,8 @@ const SearchBar = () => {
           </div>
         </div>
       </div>
-      <div className="searchText">Search</div>
+      <label className="searchText">Search</label>
+      <input type="text" style={{ border: 'none' }} />
     </div>
   );
 };

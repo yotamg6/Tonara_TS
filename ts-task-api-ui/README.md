@@ -1,46 +1,12 @@
-# Getting Started with Create React App
+# Tonara Music Assignment List - All your assignments in one place
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+Music Assignment List allows the user, music student of Tonara, to view all music assignments given by the teacher, or added independently, in one list. The list shows the assignment as a card, including all details about it, including title, genre, practice time, and progress made. By clicking on a designated button, user adds more assignments, that are added to the assignment list. The student is thus able to see all the assignments in one place, in one simple view, on her/his iPhone SE.
 
-In the project directory, you can run:
+This project is coded with React and Typescript on the client side, using axios for the server requests (GET and POST), MUI for the form design (creating a new list Item) and react-router-dom for navigating between the form and the main view. The server side is written in Node.js and Typescript using the Express framework, and the database (storing and inserting new assignments) is managed with PostgreSQL. Sequelize is used as the ORM for modeling and using the database.
 
-### `npm start`
+The design of the project is meant to be "pixel-perfect", modeled after a "Figma" file. As the file is designed for iphone 8, and the project is written for iPhone SE, I used transfrom: scale (CSS) to proportionally adjust the UI, adjusting further several other components and properties, such as the progress bar, menu, search bar image and font. The description field, present on the form and handled into the database, is not added on the assignment items, as the Figma file did not contain this field, and I tried to match the origin as much as possible.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Thank you for reading
+Yotam Gaton
