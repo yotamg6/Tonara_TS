@@ -18,9 +18,11 @@ const Item: React.FC<AssignmentProp> = ({
   },
 }) => {
   const progress =
-    days_practiced && days ? (days_practiced / days) * 254 : null;
+    days_practiced && days && days != 0 ? (days_practiced / days) * 254 : 0;
   const progressPercentage =
-    days_practiced && days ? Math.round((days_practiced / days) * 100) : null;
+    days_practiced && days && days != 0
+      ? Math.round((days_practiced / days) * 100)
+      : 0;
 
   return (
     <>

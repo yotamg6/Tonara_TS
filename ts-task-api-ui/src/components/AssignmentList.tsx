@@ -19,6 +19,7 @@ const AssignmentList: React.FC = () => {
       }
     }
     getAllAssignments();
+    
   }, []);
   return (
     <div className="list">

@@ -6,13 +6,27 @@ import UploadData from './UploadData';
 const NewAssignment = () => {
   let navigate = useNavigate();
 
-  interface MyFormType extends Partial<AssignmentInter> {}
+  // interface MyFormType extends Partial<AssignmentInter> {}
 
-  const [inputs, setInputs] = useState<MyFormType>({});
+  const [inputs, setInputs] = useState<AssignmentInter>({});
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
+    // setInputs((prevState: AssignmentInter) => {
+    // let isValid = true;
+    // if (e.target.name === 'days') {
+    //   isValid = /[0-9]/
+    // }
+    // if (!isValid) {
+    //   return;
+    // }
+    // const a: AssignmentInter = {
+    //   ...prevState,
+    //   days: e.target.value,
+    // };
+    // return a;
+    // });
     setInputs((prevState: AssignmentInter) => ({
       ...prevState,
       [e.target.name]: e.target.value,
@@ -22,7 +36,7 @@ const NewAssignment = () => {
   return (
     <>
       <div>
-        <h1>New Assignment</h1>
+        {/* <h1>New Assignment</h1> */}
         <Box
           component="form"
           sx={{
@@ -31,6 +45,7 @@ const NewAssignment = () => {
           noValidate
           autoComplete="off"
         >
+          <h1>New Assignment</h1>
           <div>
             <TextField
               label="Title"
@@ -73,7 +88,7 @@ const NewAssignment = () => {
               name="days"
               maxRows={1}
               variant="outlined"
-              value={inputs?.days || ''}
+              value={inputs.days || ''}
               onChange={handleChange}
               sx={{ m: 1, backgroundColor: '#FFE4E1' }}
             />

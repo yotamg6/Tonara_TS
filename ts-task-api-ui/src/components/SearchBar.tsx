@@ -1,7 +1,7 @@
 const SearchBar = () => {
   return (
     <div className="searchBar">
-      <div className="iconSearch positionAbso">
+      <button className="iconSearch positionAbso">
         <div className="group145115">
           <div className="firstSubGroups145115 positionAbso">
             <div className="firstSubGroups145115 positionAbso">
@@ -14,7 +14,7 @@ const SearchBar = () => {
             </div>
           </div>
         </div>
-      </div>
+      </button>
       <label className="searchText">Search</label>
       <input type="text" style={{ border: 'none' }} />
     </div>
