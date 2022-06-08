@@ -166,6 +166,9 @@
   height: 24px;
   left: 11px;
   top: 8px;
+  border: none;
+  background: #ffffff;
+  cursor: pointer;
 }
 
 .group145115 {
