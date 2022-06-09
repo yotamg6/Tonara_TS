@@ -2,6 +2,9 @@ import rythemLogo from '../media/rythem.png';
 import groupAssignmentIcon from '../media/groupAssignment.png';
 import { AssignmentInter } from '../interfaces';
 import Pdf from '../docs/doc.pdf';
+// import CheckBox from './CheckBox';
+// import { handleCheckBoxChange } from '../Utils';
+import useUtils from '../useUtils';
 
 interface AssignmentProp {
   assignment: AssignmentInter;
@@ -15,8 +18,11 @@ const Item: React.FC<AssignmentProp> = ({
     practice_time,
     days,
     days_practiced,
+    id,
   },
 }) => {
+  // console.log(id);
+  const { handleCheckBoxChange } = useUtils();
   const progress =
     days_practiced && days && days != 0 ? (days_practiced / days) * 254 : 0;
   const progressPercentage =
@@ -36,6 +42,11 @@ const Item: React.FC<AssignmentProp> = ({
           <a href={Pdf} target="_blank" className="pdfLink">
             PDF URL
           </a>
+          {/* <CheckBox id={id} /> */}
+          <input
+            type="checkbox"
+            onChange={(e) => handleCheckBoxChange(id, e)}
+          ></input>
           <div className="instructionGroup145345">
             <div className="textInstructions">
               {days} days / {practice_time} minutes per day

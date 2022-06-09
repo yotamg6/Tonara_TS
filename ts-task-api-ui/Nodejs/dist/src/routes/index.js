@@ -7,17 +7,17 @@ const express_1 = __importDefault(require("express"));
 const AssignmentModel_1 = require("../models/AssignmentModel");
 const router = express_1.default.Router();
 router.post('/assignment', async (req, res) => {
+    const { title, description, music_genre, practice_time, days, days_practiced, } = req.body;
     try {
-        const ret = await AssignmentModel_1.Assignments.create({
-            title: req.body.title,
-            description: req.body.description,
-            music_genre: req.body.music_genre,
-            practice_time: req.body.practice_time,
-            days: req.body.days,
-            days_practiced: req.body.days_practiced,
+        const returning = await AssignmentModel_1.Assignments.create({
+            title,
+            description,
+            music_genre,
+            practice_time,
+            days,
+            days_practiced,
         });
-        // return res.json({ filedata: ret.dataValues });
-        return res.json(ret);
+        return res.json(returning);
     }
     catch (e) {
         console.log('from uploads', e);

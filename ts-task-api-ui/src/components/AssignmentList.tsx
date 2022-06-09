@@ -12,6 +12,7 @@ const AssignmentList: React.FC = () => {
         axios
           .get<AssignmentInter[]>('http://localhost:5000/all-assignments')
           .then((response) => {
+            // console.log(response.data.id);
             setReturnedData(response.data);
           });
       } catch (e) {
@@ -19,7 +20,6 @@ const AssignmentList: React.FC = () => {
       }
     }
     getAllAssignments();
-    
   }, []);
   return (
     <div className="list">
