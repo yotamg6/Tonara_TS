@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { TextField, Box, Button } from '@mui/material';
 import { AssignmentInter } from '../interfaces';
-import UploadData from './UploadData';
+// import UploadData from './UploadData';
+// import { uploadData } from '../useUtils';
+import useUtils from '../useUtils';
+
 const NewAssignment = () => {
   let navigate = useNavigate();
-
-  // interface MyFormType extends Partial<AssignmentInter> {}
+  const { uploadData } = useUtils();
 
   const [inputs, setInputs] = useState<AssignmentInter>({});
 
@@ -27,16 +29,30 @@ const NewAssignment = () => {
     // };
     // return a;
     // });
-    setInputs((prevState: AssignmentInter) => ({
-      ...prevState,
-      [e.target.name]: e.target.value,
-    }));
+
+    if (
+      e.target.name === 'days' ||
+      e.target.name === 'practice_time' ||
+      e.target.name === 'days_practiced'
+    ) {
+      let allowedChar = /^[0-9\b]+$/;
+      if (e.target.value === '' || allowedChar.test(e.target.value)) {
+        setInputs((prevState: AssignmentInter) => ({
+          ...prevState,
+          [e.target.name]: e.target.value,
+        }));
+      } else return;
+    } else {
+      setInputs((prevState: AssignmentInter) => ({
+        ...prevState,
+        [e.target.name]: e.target.value,
+      }));
+    }
   };
 
   return (
     <>
       <div>
-        {/* <h1>New Assignment</h1> */}
         <Box
           component="form"
           sx={{
@@ -105,8 +121,10 @@ const NewAssignment = () => {
         </Box>
       </div>
 
-      <UploadData formValues={inputs} />
+      {/* <UploadData formValues={inputs} /> */}
+
       <br />
+      <Button onClick={() => uploadData({ formValues: inputs })}>Send</Button>
       <Button onClick={() => navigate('/')}>Back to list</Button>
     </>
   );

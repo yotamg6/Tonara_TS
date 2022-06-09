@@ -4,16 +4,24 @@ import { Assignments } from '../models/AssignmentModel';
 const router = express.Router();
 
 router.post('/assignment', async (req: Request, res: Response) => {
+  const {
+    title,
+    description,
+    music_genre,
+    practice_time,
+    days,
+    days_practiced,
+  } = req.body;
   try {
-    const ret: Assignments = await Assignments.create({
-      title: req.body.title,
-      description: req.body.description,
-      music_genre: req.body.music_genre,
-      practice_time: req.body.practice_time,
-      days: req.body.days,
-      days_practiced: req.body.days_practiced,
+    const returning: Assignments = await Assignments.create({
+      title,
+      description,
+      music_genre,
+      practice_time,
+      days,
+      days_practiced,
     });
-    return res.json(ret);
+    return res.json(returning);
   } catch (e) {
     console.log('from uploads', e);
   }
