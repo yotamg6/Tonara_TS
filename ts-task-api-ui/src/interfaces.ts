@@ -6,4 +6,10 @@ export interface AssignmentInter {
   days?: number;
   days_practiced?: number;
   id?: number;
+  isChecked?: boolean;
+}
+
+export interface ISelectedItem {
+  isChecked: boolean;
+  id?: number;
 }

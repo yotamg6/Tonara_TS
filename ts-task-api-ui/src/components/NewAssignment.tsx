@@ -8,48 +8,7 @@ import useUtils from '../useUtils';
 
 const NewAssignment = () => {
   let navigate = useNavigate();
-  const { uploadData } = useUtils();
-
-  const [inputs, setInputs] = useState<AssignmentInter>({});
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    // setInputs((prevState: AssignmentInter) => {
-    // let isValid = true;
-    // if (e.target.name === 'days') {
-    //   isValid = /[0-9]/
-    // }
-    // if (!isValid) {
-    //   return;
-    // }
-    // const a: AssignmentInter = {
-    //   ...prevState,
-    //   days: e.target.value,
-    // };
-    // return a;
-    // });
-
-    if (
-      e.target.name === 'days' ||
-      e.target.name === 'practice_time' ||
-      e.target.name === 'days_practiced'
-    ) {
-      let allowedChar = /^[0-9\b]+$/;
-      if (e.target.value === '' || allowedChar.test(e.target.value)) {
-        setInputs((prevState: AssignmentInter) => ({
-          ...prevState,
-          [e.target.name]: e.target.value,
-        }));
-      } else return;
-    } else {
-      setInputs((prevState: AssignmentInter) => ({
-        ...prevState,
-        [e.target.name]: e.target.value,
-      }));
-    }
-  };
-
+  const { uploadData, handleFormInputChange, inputs } = useUtils();
   return (
     <>
       <div>
@@ -69,7 +28,7 @@ const NewAssignment = () => {
               maxRows={1}
               variant="outlined"
               value={inputs.title || ''}
-              onChange={handleChange}
+              onChange={handleFormInputChange}
               sx={{ m: 1, backgroundColor: '#FFE4E1' }}
             />
             <TextField
@@ -78,7 +37,7 @@ const NewAssignment = () => {
               maxRows={1}
               variant="outlined"
               value={inputs.description || ''}
-              onChange={handleChange}
+              onChange={handleFormInputChange}
               sx={{ m: 1, backgroundColor: '#FFE4E1' }}
             />
             <TextField
@@ -87,7 +46,7 @@ const NewAssignment = () => {
               maxRows={1}
               variant="outlined"
               value={inputs.music_genre || ''}
-              onChange={handleChange}
+              onChange={handleFormInputChange}
               sx={{ m: 1, backgroundColor: '#FFE4E1' }}
             />
             <TextField
@@ -96,7 +55,7 @@ const NewAssignment = () => {
               maxRows={1}
               variant="outlined"
               value={inputs.practice_time || ''}
-              onChange={handleChange}
+              onChange={handleFormInputChange}
               sx={{ m: 1, backgroundColor: '#FFE4E1' }}
             />
             <TextField
@@ -105,7 +64,7 @@ const NewAssignment = () => {
               maxRows={1}
               variant="outlined"
               value={inputs.days || ''}
-              onChange={handleChange}
+              onChange={handleFormInputChange}
               sx={{ m: 1, backgroundColor: '#FFE4E1' }}
             />
             <TextField
@@ -114,15 +73,12 @@ const NewAssignment = () => {
               maxRows={1}
               variant="outlined"
               value={inputs.days_practiced || ''}
-              onChange={handleChange}
+              onChange={handleFormInputChange}
               sx={{ m: 1, backgroundColor: '#FFE4E1' }}
             />
           </div>
         </Box>
       </div>
-
-      {/* <UploadData formValues={inputs} /> */}
-
       <br />
       <Button onClick={() => uploadData({ formValues: inputs })}>Send</Button>
       <Button onClick={() => navigate('/')}>Back to list</Button>

@@ -28,7 +28,7 @@ router.post('/assignment', async (req: Request, res: Response) => {
 });
 router.get('/all-assignments', async (req: Request, res: Response) => {
   try {
-    const myAssignments: Assignments[] = await Assignments.findAll();
+    const myAssignments: Assignments[] = await Assignments.findAll();//add inside findall: { order: [['updatedAt', 'DESC']]}
     return res.json(myAssignments);
   } catch (e) {
     console.log('in SelectAllAssignments', e);

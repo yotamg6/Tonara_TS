@@ -1,7 +1,16 @@
-const SearchBar = () => {
+import useUtils from '../useUtils';
+const SearchBar = ({ onSearchInputChange }: any) => {
+  // const { handleSearchInputChange, filteredData } = useUtils();
+  // console.log('SEARCH BAR ', filteredData);
   return (
     <div className="searchBar">
-      <button className="iconSearch positionAbso">
+      <div className="iconSearch positionAbso">
+        <input
+          type="text"
+          className="searchInput"
+          placeholder="Search"
+          onChange={onSearchInputChange}
+        />
         <div className="group145115">
           <div className="firstSubGroups145115 positionAbso">
             <div className="firstSubGroups145115 positionAbso">
@@ -14,9 +23,8 @@ const SearchBar = () => {
             </div>
           </div>
         </div>
-      </button>
-      <label className="searchText">Search</label>
-      <input type="text" style={{ border: 'none' }} />
+      </div>
+      {/* <label className="searchText">Search</label> */}
     </div>
   );
 };

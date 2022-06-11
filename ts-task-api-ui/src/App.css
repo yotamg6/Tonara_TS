@@ -166,9 +166,20 @@
   height: 24px;
   left: 11px;
   top: 8px;
+}
+
+.searchInput {
   border: none;
-  background: #ffffff;
-  cursor: pointer;
+  position: absolute;
+  left: 26px;
+  height: 20px;
+  width: 280px;
+  outline: none;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
 }
 
 .group145115 {
@@ -214,7 +225,7 @@
 .gray1 {
   background: #333333;
 }
-.searchText {
+/* .searchText {
   position: absolute;
   width: 50px;
   height: 20px;
@@ -226,6 +237,17 @@
   font-size: 14px;
   line-height: 140%;
   text-align: center;
+  color: #333333;
+} */
+
+::placeholder {
+  width: 50px;
+  height: 20px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  /* line-height: 140%; */
   color: #333333;
 }
 
