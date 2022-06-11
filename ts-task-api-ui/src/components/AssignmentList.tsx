@@ -2,30 +2,37 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Item from './Item';
 import { AssignmentInter } from '../interfaces';
+import useUtils from '../useUtils';
 
-const AssignmentList: React.FC = () => {
-  const [returnedData, setReturnedData] = useState<AssignmentInter[]>([]);
+const AssignmentList = ({ onCheckBoxChange, data }: any) => {
+  // const {
+  //   returnedData,
+  //   handleCheckBoxChange,
+  //   filteredData,
+  //   handleSearchInputChange,
+  // } = useUtils();
+  // console.log('RENDER AssignmentList ', filteredData);
+  // const [searchValue, setSearchValue] = useState('');
+  // console.log('render returendData', returnedData);
+  // console.log('render assignments', assignments);
+  const handleItemCheckboxChange =
+    (index: number) =>
+    ({ target: { checked } }: any) => {
+      onCheckBoxChange(index, checked);
+    };
 
-  useEffect(() => {
-    function getAllAssignments(): void {
-      try {
-        axios
-          .get<AssignmentInter[]>('http://localhost:5000/all-assignments')
-          .then((response) => {
-            // console.log(response.data.id);
-            setReturnedData(response.data);
-          });
-      } catch (e) {
-        console.log(e);
-      }
-    }
-    getAllAssignments();
-  }, []);
   return (
     <div className="list">
-      {returnedData.length
-        ? returnedData.map((assignment, i): JSX.Element => {
-            return <Item key={i} assignment={assignment} />;
+      {data.length
+        ? data.map((assignment: any, i: number): JSX.Element => {
+            return (
+              <Item
+                key={i}
+                assignment={assignment}
+                index={i}
+                onCheckboxChange={handleItemCheckboxChange}
+              />
+            );
           })
         : null}
     </div>

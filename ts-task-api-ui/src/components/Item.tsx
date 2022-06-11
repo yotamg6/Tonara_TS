@@ -5,12 +5,16 @@ import Pdf from '../docs/doc.pdf';
 // import CheckBox from './CheckBox';
 // import { handleCheckBoxChange } from '../Utils';
 import useUtils from '../useUtils';
+import _ from 'lodash';
 
 interface AssignmentProp {
   assignment: AssignmentInter;
+  index: number;
+  onCheckboxChange: (index: number) => (event: any) => void;
 }
 
 const Item: React.FC<AssignmentProp> = ({
+  onCheckboxChange,
   assignment: {
     title,
     description,
@@ -20,9 +24,11 @@ const Item: React.FC<AssignmentProp> = ({
     days_practiced,
     id,
   },
+  index,
 }) => {
   // console.log(id);
-  const { handleCheckBoxChange } = useUtils();
+  const { returnedData, handleCheckBoxChange, setReturnedData } = useUtils();
+  // console.log('render ', returnedData);
   const progress =
     days_practiced && days && days != 0 ? (days_practiced / days) * 254 : 0;
   const progressPercentage =
@@ -42,10 +48,20 @@ const Item: React.FC<AssignmentProp> = ({
           <a href={Pdf} target="_blank" className="pdfLink">
             PDF URL
           </a>
-          {/* <CheckBox id={id} /> */}
           <input
             type="checkbox"
-            onChange={(e) => handleCheckBoxChange(id, e)}
+            onChange={onCheckboxChange(index)}
+            // onChange={(e) => {
+            //   // const nextReturned = JSON.parse(JSON.stringify(returnedData));
+            //   const nextReturned = _.cloneDeep(returnedData);
+            //   nextReturned[index].isChecked = e.target.checked;
+            //   setReturnedData(nextReturned);
+            //   // handleCheckBoxChange(index, id, e)
+            //   // setReturnedData((prevState: AssignmentInter[]) => [
+            //   //   ...prevState,
+            //   //   { isChecked: e.target.checked, id },
+            //   // ]);
+            // }}
           ></input>
           <div className="instructionGroup145345">
             <div className="textInstructions">
