@@ -2,9 +2,6 @@ import rythemLogo from '../media/rythem.png';
 import groupAssignmentIcon from '../media/groupAssignment.png';
 import { AssignmentInter } from '../interfaces';
 import Pdf from '../docs/doc.pdf';
-// import CheckBox from './CheckBox';
-// import { handleCheckBoxChange } from '../Utils';
-import useUtils from '../useUtils';
 import _ from 'lodash';
 
 interface AssignmentProp {
@@ -26,9 +23,6 @@ const Item: React.FC<AssignmentProp> = ({
   },
   index,
 }) => {
-  // console.log(id);
-  const { returnedData, handleCheckBoxChange, setReturnedData } = useUtils();
-  // console.log('render ', returnedData);
   const progress =
     days_practiced && days && days != 0 ? (days_practiced / days) * 254 : 0;
   const progressPercentage =
@@ -48,21 +42,7 @@ const Item: React.FC<AssignmentProp> = ({
           <a href={Pdf} target="_blank" className="pdfLink">
             PDF URL
           </a>
-          <input
-            type="checkbox"
-            onChange={onCheckboxChange(index)}
-            // onChange={(e) => {
-            //   // const nextReturned = JSON.parse(JSON.stringify(returnedData));
-            //   const nextReturned = _.cloneDeep(returnedData);
-            //   nextReturned[index].isChecked = e.target.checked;
-            //   setReturnedData(nextReturned);
-            //   // handleCheckBoxChange(index, id, e)
-            //   // setReturnedData((prevState: AssignmentInter[]) => [
-            //   //   ...prevState,
-            //   //   { isChecked: e.target.checked, id },
-            //   // ]);
-            // }}
-          ></input>
+          <input type="checkbox" onChange={onCheckboxChange(index)}></input>
           <div className="instructionGroup145345">
             <div className="textInstructions">
               {days} days / {practice_time} minutes per day

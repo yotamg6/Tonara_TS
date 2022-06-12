@@ -1,7 +1,4 @@
-import useUtils from '../useUtils';
 const SearchBar = ({ onSearchInputChange }: any) => {
-  // const { handleSearchInputChange, filteredData } = useUtils();
-  // console.log('SEARCH BAR ', filteredData);
   return (
     <div className="searchBar">
       <div className="iconSearch positionAbso">
@@ -24,7 +21,6 @@ const SearchBar = ({ onSearchInputChange }: any) => {
           </div>
         </div>
       </div>
-      {/* <label className="searchText">Search</label> */}
     </div>
   );
 };
