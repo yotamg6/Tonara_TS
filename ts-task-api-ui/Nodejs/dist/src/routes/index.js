@@ -25,7 +25,36 @@ router.post('/assignment', async (req, res) => {
 });
 router.get('/all-assignments', async (req, res) => {
     try {
-        const myAssignments = await AssignmentModel_1.Assignments.findAll();
+        const myAssignments = await AssignmentModel_1.Assignments.findAll({
+            order: [['updatedat', 'DESC']],
+        });
+        return res.json(myAssignments);
+    }
+    catch (e) {
+        console.log('in SelectAllAssignments', e);
+    }
+});
+router.post('/delete-assignments', async (req, res) => {
+    const { checkedIds } = req.body;
+    try {
+        // await Promise.all(
+        // checkedIds.map((id: number) => {
+        const returning = await AssignmentModel_1.Assignments.destroy({
+            where: {
+                id: checkedIds,
+            },
+        });
+        console.log(returning);
+        // })
+        // );
+    }
+    catch (e) {
+        console.log(e);
+    }
+    try {
+        const myAssignments = await AssignmentModel_1.Assignments.findAll({
+            order: [['updatedat', 'DESC']],
+        });
         return res.json(myAssignments);
     }
     catch (e) {
