@@ -37,16 +37,11 @@ router.get('/all-assignments', async (req, res) => {
 router.post('/delete-assignments', async (req, res) => {
     const { checkedIds } = req.body;
     try {
-        // await Promise.all(
-        // checkedIds.map((id: number) => {
         const returning = await AssignmentModel_1.Assignments.destroy({
             where: {
                 id: checkedIds,
             },
         });
-        console.log(returning);
-        // })
-        // );
     }
     catch (e) {
         console.log(e);

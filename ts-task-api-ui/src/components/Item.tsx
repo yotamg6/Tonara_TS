@@ -12,15 +12,7 @@ interface AssignmentProp {
 
 const Item: React.FC<AssignmentProp> = ({
   onCheckboxChange,
-  assignment: {
-    title,
-    description,
-    music_genre,
-    practice_time,
-    days,
-    days_practiced,
-    id,
-  },
+  assignment: { title, music_genre, practice_time, days, days_practiced },
   index,
 }) => {
   const progress =

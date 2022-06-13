@@ -81,9 +81,6 @@ const useUtils = () => {
   const handleSearchInputChange = ({
     target: { value },
   }: React.ChangeEvent<HTMLInputElement>) => {
-    // console.log('handleSearchInputChange');
-    // console.log('returnedData', returnedData?.length);
-    // console.log('value ', value);
     if (!value.length) {
       setFilteredData(returnedData);
       return;
@@ -95,13 +92,11 @@ const useUtils = () => {
         return regexInput.test(title);
       }
     });
-    // console.log('searchResults', searchResults);
+
     setFilteredData(searchResults);
   };
 
   const handleCheckBoxChange = (index: number, isChecked: boolean) => {
-    // console.log('handleCheckBoxChange');
-    // console.log('returnedData', returnedData?.length);
     const nextReturned = _.cloneDeep(returnedData);
     nextReturned[index].isChecked = isChecked;
     setReturnedData(nextReturned);
@@ -114,7 +109,7 @@ const useUtils = () => {
         checkedIds.push(returnedData[i].id);
       }
     }
-    // console.log(checkedIds);
+
     try {
       const { data } = await axios.post<AssignmentInter[]>(
         'http://localhost:5000/delete-assignments',
@@ -127,6 +122,7 @@ const useUtils = () => {
       console.log(e);
     }
   };
+
   return {
     uploadData,
     filteredData,
@@ -140,17 +136,3 @@ const useUtils = () => {
   };
 };
 export default useUtils;
-
-// const [selectedItems, setSelectedItems] = useState<ISelectedItem[]>([
-//   { isChecked: true, id: 0 },
-// ]);
-
-// setSelectedItems((prevState: ISelectedItem[]) => [
-//   ...prevState,
-//   { isChecked: e.target.checked, id },
-// ]);
-/////////from delete fun/////////
-// const selected = selectedItems.filter((item, i) => {
-//   return item.isChecked === true;
-// });
-// console.log('selected', selected);
