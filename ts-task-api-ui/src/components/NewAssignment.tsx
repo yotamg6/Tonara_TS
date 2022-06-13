@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { TextField, Box, Button } from '@mui/material';
 import { AssignmentInter } from '../interfaces';
-// import UploadData from './UploadData';
-// import { uploadData } from '../useUtils';
 import useUtils from '../useUtils';
 
 const NewAssignment = () => {
   let navigate = useNavigate();
   const { uploadData, handleFormInputChange, inputs } = useUtils();
+
   return (
     <>
       <div>

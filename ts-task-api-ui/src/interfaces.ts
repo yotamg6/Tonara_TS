@@ -8,8 +8,3 @@ export interface AssignmentInter {
   id?: number;
   isChecked?: boolean;
 }
-
-export interface ISelectedItem {
-  isChecked: boolean;
-  id?: number;
-}
