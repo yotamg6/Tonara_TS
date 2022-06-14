@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import rythemLogo from '../media/rythem.png';
 import groupAssignmentIcon from '../media/groupAssignment.png';
 import { AssignmentInter } from '../interfaces';
@@ -15,12 +16,36 @@ const Item: React.FC<AssignmentProp> = ({
   assignment: { title, music_genre, practice_time, days, days_practiced },
   index,
 }) => {
-  const progress =
-    days_practiced && days && days != 0 ? (days_practiced / days) * 254 : 0;
-  const progressPercentage =
-    days_practiced && days && days != 0
-      ? Math.round((days_practiced / days) * 100)
-      : 0;
+  // const progress =
+  //   days_practiced && days && days != 0 ? (days_practiced / days) * 254 : 0;
+  // const progressPercentage =
+  //   days_practiced && days && days != 0
+  //     ? Math.round((days_practiced / days) * 100)
+  //     : 0;
+
+  const calcProgres = (days: any, days_practiced: any) => {
+    const progress =
+      days_practiced && days && days != 0 ? (days_practiced / days) * 254 : 0;
+    return progress;
+  };
+
+  const calcProgresPercentage = (days: any, days_practiced: any) => {
+    const progressPercentage =
+      days_practiced && days && days != 0
+        ? Math.round((days_practiced / days) * 100)
+        : 0;
+    return progressPercentage;
+  };
+
+  const progress = useMemo(
+    () => calcProgres(days, days_practiced),
+    [days, days_practiced]
+  );
+
+  const progressPercentage = useMemo(
+    () => calcProgresPercentage(days, days_practiced),
+    [days, days_practiced]
+  );
 
   return (
     <>

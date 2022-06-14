@@ -14,16 +14,22 @@ const CoursePage = () => {
   return (
     <div className="container">
       <div className="coursePage">
-        <AddBtn />
-        <img className="teacherImage"></img>
+        {/* <AddBtn /> */}
+        {/* <img className="teacherImage"></img> */}
+
         <TopCover />
-        <button onClick={deleteSelectedItems}>Delete selected</button>
-        <SearchBar onSearchInputChange={handleSearchInputChange} />
-        <AssignmentList
-          onCheckBoxChange={handleCheckBoxChange}
-          data={filteredData}
-        />
       </div>
+      <button
+        style={{ position: 'absolute', top: '20%', left: '5.87%' }}
+        onClick={deleteSelectedItems}
+      >
+        Delete selected
+      </button>
+      <SearchBar onSearchInputChange={handleSearchInputChange} />
+      <AssignmentList
+        onCheckBoxChange={handleCheckBoxChange}
+        data={filteredData}
+      />
     </div>
   );
 };
