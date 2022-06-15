@@ -41,7 +41,7 @@ const deleteAssignmentsAndReturnCurrent = async (req, res) => {
                     id: checkedIds,
                 },
             });
-            (0, exports.getAllAssignments)(req, res);
+            return (0, exports.getAllAssignments)(req, res);
         }
         catch (e) {
             console.log(e);

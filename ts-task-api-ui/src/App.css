@@ -1,15 +1,12 @@
 html {
   height: 100%;
-  /* width: 100%; */
 }
 body {
   height: 100%;
-  /* width: 100%; */
 }
 .App {
   text-align: center;
   height: 100%;
-  /* width: 100%; */
 }
 
 .App-logo {
@@ -18,9 +15,6 @@ body {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  /* .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  } */
 }
 
 .App-header {
@@ -48,15 +42,11 @@ body {
 }
 
 .container {
-  /* position: relative;
-  transform: scale(0.994695, 0.87763); */
   height: 100%;
   width: 100%;
 }
 .coursePage {
   position: fixed;
-  /* width: 375px; */
-  /* height: 760px; */
   height: 100%;
   width: 100%;
   left: 0;
@@ -67,10 +57,7 @@ body {
 
 .topCover {
   position: relative;
-  /* position: absolute; */
-  /* width: 375px; */
   width: 100%;
-  /* height: 100px; */
   height: 13.16%;
   left: 0;
   top: 0;
@@ -81,7 +68,6 @@ body {
 .topCoverCont {
   position: relative;
   width: 100%;
-  /* height: 100px; */
   height: 13.16%;
   left: 0;
   top: 0;
@@ -95,12 +81,8 @@ body {
   background: url('./media/Teacher\ Image.png') no-repeat;
   box-sizing: border-box;
   width: 80px;
-  /* width: 21.34%; */
   height: 88px;
-  /* height: 88%; */
-  /* left: 20px; */
   left: 5.34%;
-  /* top: 60px; */
   top: 68.42%;
   border-radius: 70px;
   background-size: 80px 90px;
@@ -108,24 +90,15 @@ body {
 
 .addBtn {
   position: absolute;
-  /* width: 44px; */
-  /* width: 48px;  */
   width: 12.8%;
-  /* height: 48px; */
   height: 48%;
-  /* left: 321px; */
-  /* left: 317px; */
   left: 84.53%;
-  /* top: 92px; */
   top: 92%;
   background: #ffffff;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
   border: 1px solid #ffffff;
   border-radius: 80px;
-  /* border-radius: 80%; */
   cursor: pointer;
-  /* background: url('./media/Union.png') no-repeat;
-  background-size: contain; */
 }
 
 .union {
@@ -167,13 +140,9 @@ body {
 
 .menuBtn {
   position: absolute;
-  /* width: 48px; */
   width: 12.8%;
-  /* height: 48px; */
   height: 12.8%;
-  /* left: 318px; */
   left: 84.8%;
-  /* top: 10px; */
   top: 10%;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.32));
 }
@@ -206,13 +175,9 @@ body {
 .searchBar {
   position: absolute;
   box-sizing: border-box;
-  /* width: 335px; */
   width: 89.34%;
-  /* height: 40px; */
   height: 5.27%;
-  /* left: 22px; */
   left: 5.87%;
-  /* top: 178px; */
   top: 23.42%;
   overflow-x: scroll;
   background: #ffffff;
@@ -222,20 +187,15 @@ body {
 
 .iconSearch {
   position: absolute;
-  /* width: 24px; */
   width: 7.17%;
-  /* height: 24px; */
   height: 60%;
-  /* left: 11px; */
   left: 3.29%;
-  /* top: 8px; */
   top: 25%;
 }
 
 .searchInput {
   border: none;
   position: absolute;
-  /* left: 26px; */
   left: 80%;
   height: 20px;
   width: 280px;
@@ -277,9 +237,7 @@ body {
 }
 .searchStickVector {
   height: 2.287285804748535px;
-
   width: 8.5px;
-
   left: 1px;
   top: 3px;
   border-radius: 0px;
@@ -293,20 +251,6 @@ body {
 .gray1 {
   background: #333333;
 }
-/* .searchText {
-  position: absolute;
-  width: 50px;
-  height: 20px;
-  left: 39px;
-  top: 10px;
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 140%;
-  text-align: center;
-  color: #333333;
-} */
 
 ::placeholder {
   width: 50px;
@@ -315,32 +259,21 @@ body {
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
-  /* line-height: 140%; */
   color: #333333;
 }
 
 .list {
   position: absolute;
-  /* width: 335px; */
   width: 89.34%;
-  /* height: 491px; */
   height: 64.6%;
-  /* left: 20px; */
   left: 5.34%;
-  /* right: 22px; */
   right: 5.87%;
-  /* top: 228px; */
   top: 30%;
 }
 
 .card {
-  /* width: 335px; */
   width: 100%;
   height: 153px;
-
-  /* left: 20px; */
-  /* left: 5.34%; */
-  /* top: 566px; */
   margin: 16px 0px 16px 0px;
   background: #ffffff;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -402,10 +335,8 @@ body {
   position: absolute;
   display: flex;
   justify-content: space-between;
-  /* width: 303px; */
   width: 92%;
   height: 24px;
-  /* left: 16px; */
   right: 4%;
   top: 81px;
   align-items: center;
@@ -421,7 +352,6 @@ body {
 
 .progressGroup145346 {
   position: absolute;
-  /* width: 303px; */
   width: 80.8%;
   height: 20px;
   left: 16px;
@@ -442,12 +372,8 @@ body {
 
 .progPercentage {
   position: absolute;
-  /* width: 29px; */
   width: 7.74%;
-  /* height: 20px; */
   height: 13%;
-  /* left: 290px; */
-  /* left: 77.34%; */
   right: 4.27%;
   top: 117px;
   font-family: 'Poppins';
