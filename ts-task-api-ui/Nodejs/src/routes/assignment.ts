@@ -1,4 +1,4 @@
-import { NextFunction } from 'express';
+import { Request, Response, NextFunction } from 'express';
 import { isNumber } from '../common/validations';
 
 export const validateAssignment = async (
@@ -14,17 +14,13 @@ export const validateAssignment = async (
     days,
     days_practiced,
   }: any = req.body;
-  const message: string = 'error. required field accepts only numbers';
   if (title && practice_time && days && days_practiced) {
-    if (
-      isNumber(title) &&
-      isNumber(practice_time) &&
-      isNumber(days) &&
-      isNumber(days_practiced)
-    ) {
-      next();
+    if (isNumber(practice_time) && isNumber(days) && isNumber(days_practiced)) {
+      return next();
     }
-    return res.json(message);
-    // else return res.json().then((data) => data as string);
-  } else return res.json({ message: 'error. empty fields not allowed' });
+    return res
+      .status(403)
+      .json({ message: 'error. required field accepts only numbers' });
+  } else
+    return res.status(403).json({ message: 'error. empty fields not allowed' });
 };
