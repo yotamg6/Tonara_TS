@@ -1,9 +1,17 @@
 import express, { Request, Response } from 'express';
 import { Assignments } from '../models/AssignmentModel';
 import { validateAssignment } from './assignment';
-import { createAssignment } from '../controllers/assignment';
+import {
+  createAssignment,
+  deleteAssignmentsAndReturnCurrent,
+  getAllAssignments,
+} from '../controllers/assignment';
 
 const router = express.Router();
+
+router.post('/assignment', validateAssignment, createAssignment);
+router.get('/assignment', getAllAssignments);
+router.post('/delete-assignments', deleteAssignmentsAndReturnCurrent);
 
 // router.post('/assignment', async (req: Request, res: Response) => {
 //   const {
@@ -29,38 +37,36 @@ const router = express.Router();
 //   }
 // });
 
-router.post('/assignment', validateAssignment, createAssignment);
+// router.get('/all-assignments', async (req: Request, res: Response) => {
+//   try {
+//     const myAssignments: Assignments[] = await Assignments.findAll({
+//       order: [['updatedat', 'DESC']],
+//     });
+//     return res.json(myAssignments);
+//   } catch (e) {
+//     console.log('in SelectAllAssignments', e);
+//   }
+// });
 
-router.get('/all-assignments', async (req: Request, res: Response) => {
-  try {
-    const myAssignments: Assignments[] = await Assignments.findAll({
-      order: [['updatedat', 'DESC']],
-    });
-    return res.json(myAssignments);
-  } catch (e) {
-    console.log('in SelectAllAssignments', e);
-  }
-});
-
-router.post('/delete-assignments', async (req: Request, res: Response) => {
-  const { checkedIds } = req.body;
-  try {
-    const returning = await Assignments.destroy({
-      where: {
-        id: checkedIds,
-      },
-    });
-  } catch (e) {
-    console.log(e);
-  }
-  try {
-    const myAssignments: Assignments[] = await Assignments.findAll({
-      order: [['updatedat', 'DESC']],
-    });
-    return res.json(myAssignments);
-  } catch (e) {
-    console.log('in SelectAllAssignments', e);
-  }
-});
+// router.post('/delete-assignments', async (req: Request, res: Response) => {
+//   const { checkedIds } = req.body;
+//   try {
+//     const returning = await Assignments.destroy({
+//       where: {
+//         id: checkedIds,
+//       },
+//     });
+//   } catch (e) {
+//     console.log(e);
+//   }
+//   try {
+//     const myAssignments: Assignments[] = await Assignments.findAll({
+//       order: [['updatedat', 'DESC']],
+//     });
+//     return res.json(myAssignments);
+//   } catch (e) {
+//     console.log('in SelectAllAssignments', e);
+//   }
+// });
 
 export default router;

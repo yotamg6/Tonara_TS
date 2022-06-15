@@ -13,7 +13,7 @@ const useUtils = () => {
     function getAllAssignments(): void {
       try {
         axios
-          .get<AssignmentInter[]>('http://localhost:5000/all-assignments')
+          .get<AssignmentInter[]>('http://localhost:5000/assignment')
           .then((response) => {
             setReturnedData(response.data);
             setFilteredData(response.data);
@@ -65,9 +65,11 @@ const useUtils = () => {
     ) {
       let allowedChar = /^[0-9\b]+$/;
       if (e.target.value === '' || allowedChar.test(e.target.value)) {
+        const value = Number(e.target.value);
+
         setInputs((prevState: AssignmentInter) => ({
           ...prevState,
-          [e.target.name]: e.target.value,
+          [e.target.name]: value,
         }));
       } else return;
     } else {
@@ -107,9 +109,9 @@ const useUtils = () => {
     for (let i = 0; i < returnedData.length; i++) {
       if (returnedData[i].isChecked) {
         checkedIds.push(returnedData[i].id);
+      } else {
       }
     }
-
     try {
       const { data } = await axios.post<AssignmentInter[]>(
         'http://localhost:5000/delete-assignments',
@@ -117,7 +119,9 @@ const useUtils = () => {
           checkedIds,
         }
       );
+
       setFilteredData(data);
+      setReturnedData(data);
     } catch (e) {
       console.log(e);
     }
