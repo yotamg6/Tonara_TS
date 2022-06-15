@@ -1,7 +1,6 @@
 import TopCover from './TopCover';
 import SearchBar from './SearchBar';
 import AssignmentList from './AssignmentList';
-import AddBtn from './AddBtn';
 import useUtils from '../useUtils';
 
 const CoursePage = () => {
@@ -14,9 +13,6 @@ const CoursePage = () => {
   return (
     <div className="container">
       <div className="coursePage">
-        {/* <AddBtn /> */}
-        {/* <img className="teacherImage"></img> */}
-
         <TopCover />
       </div>
       <button

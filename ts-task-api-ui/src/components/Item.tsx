@@ -16,13 +16,6 @@ const Item: React.FC<AssignmentProp> = ({
   assignment: { title, music_genre, practice_time, days, days_practiced },
   index,
 }) => {
-  // const progress =
-  //   days_practiced && days && days != 0 ? (days_practiced / days) * 254 : 0;
-  // const progressPercentage =
-  //   days_practiced && days && days != 0
-  //     ? Math.round((days_practiced / days) * 100)
-  //     : 0;
-
   const calcProgres = (days: any, days_practiced: any) => {
     const progress =
       days_practiced && days && days != 0 ? (days_practiced / days) * 254 : 0;

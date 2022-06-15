@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from 'react';
 import Item from './Item';
-import { AssignmentInter } from '../interfaces';
 
 const AssignmentList = ({ onCheckBoxChange, data }: any) => {
   const handleItemCheckboxChange =

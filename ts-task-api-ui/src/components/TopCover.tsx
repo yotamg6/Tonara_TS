@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 const TopCover = () => {
   let navigate = useNavigate();
   return (
-    // <div className="topCoverCont">
     <div className="topCover">
       <button className="addBtn" onClick={() => navigate('new-assignment')}>
         <div className="union">
@@ -21,8 +20,6 @@ const TopCover = () => {
           <div className="menuVectorLines"></div>
         </div>
       </div>
-      {/* <MenuBtn /> */}
-      {/* </div> */}
     </div>
   );
 };
