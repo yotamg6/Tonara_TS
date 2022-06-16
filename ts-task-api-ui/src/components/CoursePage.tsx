@@ -16,7 +16,7 @@ const CoursePage = () => {
         <TopCover />
       </div>
       <button
-        style={{ position: 'absolute', top: '20%', left: '5.87%' }}
+        style={{ position: 'absolute', top: '20%', left: '35%' }}
         onClick={deleteSelectedItems}
       >
         Delete selected
